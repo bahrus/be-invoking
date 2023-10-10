@@ -21,3 +21,13 @@ To specify a different event:
         <input be-invoking='of do something on input.'>
 </host-element>
 ```
+
+## Example 2
+
+```html
+<host-element>
+    #shadow
+        <peer-element -my-method></peer-element>
+        <input be-invoking='of -my-method.'>
+</host-element>
+```
