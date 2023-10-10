@@ -1,11 +1,42 @@
 {
   "name": "be-invoking",
   "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "keywords": [
+    "web-components",
+    "web-component",
+    "custom-element",
+    "custom-elements"
+  ],
+  "description": "Invoke method on upstream peer element or the host.",
+  "main": "be-invoking.js",
+  "module": "be-invoking.js",
+  "exports":{
+    ".": "./be-invoking.js",
+    "./be-invoking.js": "./be-invoking.js"
   },
-  "author": "",
+  "types": "types.d.ts",
+  "scripts": {
+    "serve": "node node_modules/may-it-serve",
+    "test": "playwright test",
+    "safari": "npx playwright wk http://localhost:3030",
+    "update": "ncu -u && npm install"
+  },
+  "dependencies": {
+    "be-enhanced": "0.0.55",
+    "be-hive": "0.0.123",
+    "be-linked": "0.0.52",
+    "be-propagating": "0.0.28",
+    "trans-render": "0.0.706",
+    "xtal-element": "0.0.579"
+  },
+  "devDependencies": {
+    "may-it-serve": "0.0.6",
+    "@playwright/test": "1.38.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahrus/be-invoking.git"
+  },
+  "author": "Bruce B. Anderson <anderson.bruce.b@gmail.com>",
   "license": "MIT"
 }

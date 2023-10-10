@@ -1,11 +1,13 @@
 # be-invoking
 
+Invoke method on upstream peer element or the host.
+
 ## Example 1a
 
 ```html
 <host-element>
     #shadow
-        <input be-invoking='of do something.'>
+        <input disabled be-invoking='of do something.'>
 </host-element>
 ```
 
