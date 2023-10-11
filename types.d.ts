@@ -30,4 +30,5 @@ export interface Actions{
 export interface InvokeRule {
     localEvent?: string,
     remoteMethodName?: string,
+    remoteType?: ElTypes,
 }

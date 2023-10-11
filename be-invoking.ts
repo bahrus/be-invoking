@@ -29,7 +29,7 @@ export class BeInvoking extends BE<AP, Actions> implements Actions{
         }
         return {
             invokingRules
-        }
+        };
     }
 
     async hydrate(self: this){
@@ -56,7 +56,11 @@ const xe = new XE<AP, Actions>({
             ...propInfo,
         },
         actions:{
-
+            onCamelized: {
+                ifAllOf: ['isParsed'],
+                ifAtLeastOneOf: ['of', 'Of']
+            },
+            hydrate: 'invokingRules'
         }
     },
     superclass: BeInvoking
