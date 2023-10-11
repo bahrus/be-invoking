@@ -15,7 +15,9 @@ const reOfInvokingStatement: Array<RegExpOrRegExpExt<Partial<InvokeRule>>> = [
     },
     {
         regExp: new RegExp(String.raw `^(?<remoteMethodName>[\w]+)`),
-        defaultVals:{}
+        defaultVals:{
+            remoteType: '/',
+        }
     },
 ];
 

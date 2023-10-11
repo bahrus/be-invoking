@@ -11,7 +11,9 @@ const reOfInvokingStatement = [
     },
     {
         regExp: new RegExp(String.raw `^(?<remoteMethodName>[\w]+)`),
-        defaultVals: {}
+        defaultVals: {
+            remoteType: '/',
+        }
     },
 ];
 export function prsOf(self) {
