@@ -19,6 +19,15 @@ export class BeInvoking extends BE<AP, Actions> implements Actions{
             isParsedProp: 'isParsed'
         } as BEConfig;
     }
+
+    async onCamelized(self: this): ProPAP {
+    }
+
+    async hydrate(self: this){
+        return {
+            resolved: true,
+        }
+    }
 }
 
 export interface BeInvoking extends AllProps{}

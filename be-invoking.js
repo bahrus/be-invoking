@@ -15,6 +15,13 @@ export class BeInvoking extends BE {
             isParsedProp: 'isParsed'
         };
     }
+    async onCamelized(self) {
+    }
+    async hydrate(self) {
+        return {
+            resolved: true,
+        };
+    }
 }
 const tagName = 'be-invoking';
 const ifWantsToBe = 'invoking';
