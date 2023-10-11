@@ -9,6 +9,7 @@ export interface EndUserProps extends IBE{
 
 export interface AllProps extends EndUserProps{
     isParsed?: boolean,
+    invokingRules?: Array<InvokeRule>,
 }
 
 export type OfStatement = string;

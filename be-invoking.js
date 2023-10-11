@@ -16,6 +16,15 @@ export class BeInvoking extends BE {
         };
     }
     async onCamelized(self) {
+        const { of, Of } = self;
+        let invokingRules = [];
+        if ((of || Of) !== undefined) {
+            const { prsOf } = await import('./prsOf.js');
+            invokingRules = prsOf(self);
+        }
+        return {
+            invokingRules
+        };
     }
     async hydrate(self) {
         return {

@@ -1,7 +1,7 @@
 import {BE, propDefaults, propInfo} from 'be-enhanced/BE.js';
 import {BEConfig} from 'be-enhanced/types';
 import {XE} from 'xtal-element/XE.js';
-import {Actions, AllProps, AP, PAP, ProPAP, POA} from './types';
+import {Actions, AllProps, AP, PAP, ProPAP, POA, InvokeRule} from './types';
 import {register} from 'be-hive/register.js';
 import {findRealm} from 'trans-render/lib/findRealm.js';
 
@@ -21,6 +21,15 @@ export class BeInvoking extends BE<AP, Actions> implements Actions{
     }
 
     async onCamelized(self: this): ProPAP {
+        const {of, Of} = self;
+        let invokingRules: Array<InvokeRule> = [];
+        if((of || Of) !== undefined){
+            const {prsOf} = await import('./prsOf.js');
+            invokingRules = prsOf(self);
+        }
+        return {
+            invokingRules
+        }
     }
 
     async hydrate(self: this){
