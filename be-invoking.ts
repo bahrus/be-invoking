@@ -37,8 +37,14 @@ export class BeInvoking extends BE<AP, Actions> implements Actions{
         const {enhancedElement, invokingRules} = self;
         for(const rule of invokingRules!){
             const {localEvent} = rule;
-            
-            enhancedElement.addEventListener(localEvent, async e => {
+            let signalInfo: SignalInfo | undefined;
+            if(localEvent){
+                throw 'NI';
+            }else{
+                signalInfo = getDefaultSignalInfo(enhancedElement);
+            }
+            const {eventTarget, type} = signalInfo;
+            eventTarget.addEventListener(type, async e => {
                 let {remoteRef, remoteMethodName} = rule;
                 let ref = remoteRef?.deref();
                 if(ref === undefined){
@@ -55,6 +61,22 @@ export class BeInvoking extends BE<AP, Actions> implements Actions{
             resolved: true,
         }
     }
+}
+
+interface SignalInfo{
+    eventTarget: EventTarget,
+    type: string,
+}
+function getDefaultSignalInfo(enhancedElement: Element): SignalInfo{
+    const {localName} = enhancedElement;
+    switch(localName){
+        case 'input':
+            return {
+                eventTarget: enhancedElement,
+                type: 'input'
+            }
+    }
+    throw 'NI';
 }
 
 export const strType = String.raw `\/|\-`;

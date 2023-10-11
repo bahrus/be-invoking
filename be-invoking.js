@@ -31,7 +31,15 @@ export class BeInvoking extends BE {
         const { enhancedElement, invokingRules } = self;
         for (const rule of invokingRules) {
             const { localEvent } = rule;
-            enhancedElement.addEventListener(localEvent, async (e) => {
+            let signalInfo;
+            if (localEvent) {
+                throw 'NI';
+            }
+            else {
+                signalInfo = getDefaultSignalInfo(enhancedElement);
+            }
+            const { eventTarget, type } = signalInfo;
+            eventTarget.addEventListener(type, async (e) => {
                 let { remoteRef, remoteMethodName } = rule;
                 let ref = remoteRef?.deref();
                 if (ref === undefined) {
@@ -48,6 +56,17 @@ export class BeInvoking extends BE {
             resolved: true,
         };
     }
+}
+function getDefaultSignalInfo(enhancedElement) {
+    const { localName } = enhancedElement;
+    switch (localName) {
+        case 'input':
+            return {
+                eventTarget: enhancedElement,
+                type: 'input'
+            };
+    }
+    throw 'NI';
 }
 export const strType = String.raw `\/|\-`;
 const tagName = 'be-invoking';
