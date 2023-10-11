@@ -57,6 +57,8 @@ export class BeInvoking extends BE<AP, Actions> implements Actions{
     }
 }
 
+export const strType = String.raw `\/|\-`;
+
 export interface BeInvoking extends AllProps{}
 
 const tagName = 'be-invoking';
