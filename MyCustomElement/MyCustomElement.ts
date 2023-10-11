@@ -20,6 +20,7 @@ export class MyCustomElement extends HTMLElement{
     connectedCallback(){
         this.shadowRoot!.innerHTML = String.raw `
         <div itemscope>
+            <div  id=someNumPropVal></div>
             <input disabled be-invoking='of double it.'>
         </div>
         <be-hive></be-hive>
