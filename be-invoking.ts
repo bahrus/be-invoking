@@ -3,7 +3,8 @@ import {BEConfig} from 'be-enhanced/types';
 import {XE} from 'xtal-element/XE.js';
 import {Actions, AllProps, AP, PAP, ProPAP, POA, InvokeRule} from './types';
 import {register} from 'be-hive/register.js';
-import {findRealm} from 'trans-render/lib/findRealm.js';
+import {nudge} from 'trans-render/lib/nudge.js';
+import {ElTypes} from 'be-linked/types';
 
 export class BeInvoking extends BE<AP, Actions> implements Actions{
     #abortControllers: Array<AbortController>  = [];
@@ -33,6 +34,23 @@ export class BeInvoking extends BE<AP, Actions> implements Actions{
     }
 
     async hydrate(self: this){
+        const {enhancedElement, invokingRules} = self;
+        for(const rule of invokingRules!){
+            const {localEvent} = rule;
+            
+            enhancedElement.addEventListener(localEvent, async e => {
+                let {remoteRef, remoteMethodName} = rule;
+                let ref = remoteRef?.deref();
+                if(ref === undefined){
+                    const {remoteType} = rule;
+                    const {getRemoteEl} = await import('be-linked/getRemoteEl.js');
+                    ref = await getRemoteEl(enhancedElement, remoteType as ElTypes, remoteMethodName);
+                    rule.remoteRef = new WeakRef(ref);
+                }
+                (<any>ref)[remoteMethodName](ref, e);
+            });
+        }
+        nudge(enhancedElement);
         return {
             resolved: true,
         }

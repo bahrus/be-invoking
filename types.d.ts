@@ -1,6 +1,6 @@
 import { ActionOnEventConfigs } from "trans-render/froop/types";
 import {IBE} from 'be-enhanced/types';
-import {ElTypes, SignalRefType, SignalContainer} from 'be-linked/types';
+import {SignalRefType, SignalContainer} from 'be-linked/types';
 
 export interface EndUserProps extends IBE{
     Of?: Array<OfStatement>,
@@ -27,8 +27,11 @@ export interface Actions{
     hydrate(self: this): ProPAP;
 }
 
+export type ElTypes = '/' | '-';
+
 export interface InvokeRule {
-    localEvent?: string,
-    remoteMethodName?: string,
-    remoteType?: ElTypes,
+    localEvent: string,
+    remoteMethodName: string,
+    remoteType: ElTypes,
+    remoteRef?: WeakRef<Element>,
 }
