@@ -5,10 +5,10 @@ Invoke method on upstream peer element or the host.
 ## Example 1a
 
 ```html
-<host-element>
+<my-custom-element>
     #shadow
         <input disabled be-invoking='of do something.'>
-</host-element>
+</my-custom-element>
 ```
 
 What this does:  Invokes host-element's doSomething method only when the input element dispatches "change" event.

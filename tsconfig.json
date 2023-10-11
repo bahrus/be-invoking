@@ -8,7 +8,8 @@
 		"strict": true,
 	},
 	"files": [
-		"be-invoking.ts"
+		"be-invoking.ts",
+		"MyCustomElement/MyCustomElement.ts"
 	],
 	"exclude":[
 		"node_modules"
