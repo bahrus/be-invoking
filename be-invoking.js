@@ -2,9 +2,10 @@ import { BE, propDefaults, propInfo } from 'be-enhanced/BE.js';
 import { XE } from 'xtal-element/XE.js';
 import { register } from 'be-hive/register.js';
 import { nudge } from 'trans-render/lib/nudge.js';
+import { getDefaultSignalInfo } from 'be-linked/getDefaultSignalInfo.js';
 export class BeInvoking extends BE {
     #abortControllers = [];
-    detach(detachedElement) {
+    detach() {
         for (const ac of this.#abortControllers) {
             ac.abort();
         }
@@ -61,17 +62,6 @@ export class BeInvoking extends BE {
             resolved: true,
         };
     }
-}
-function getDefaultSignalInfo(enhancedElement) {
-    const { localName } = enhancedElement;
-    switch (localName) {
-        case 'input':
-            return {
-                eventTarget: enhancedElement,
-                type: 'input'
-            };
-    }
-    throw 'NI';
 }
 export const strType = String.raw `\/|\-`;
 const tagName = 'be-invoking';

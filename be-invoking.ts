@@ -4,11 +4,12 @@ import {XE} from 'xtal-element/XE.js';
 import {Actions, AllProps, AP, PAP, ProPAP, POA, InvokeRule} from './types';
 import {register} from 'be-hive/register.js';
 import {nudge} from 'trans-render/lib/nudge.js';
-import {ElTypes} from 'be-linked/types';
+import {ElTypes, SignalInfo} from 'be-linked/types';
+import {getDefaultSignalInfo} from 'be-linked/getDefaultSignalInfo.js';
 
 export class BeInvoking extends BE<AP, Actions> implements Actions{
     #abortControllers: Array<AbortController>  = [];
-    detach(detachedElement: Element): void {
+    detach(): void {
         for(const ac of this.#abortControllers){
             ac.abort();
         }
@@ -68,21 +69,7 @@ export class BeInvoking extends BE<AP, Actions> implements Actions{
     }
 }
 
-interface SignalInfo{
-    eventTarget: EventTarget,
-    type: string,
-}
-function getDefaultSignalInfo(enhancedElement: Element): SignalInfo{
-    const {localName} = enhancedElement;
-    switch(localName){
-        case 'input':
-            return {
-                eventTarget: enhancedElement,
-                type: 'input'
-            }
-    }
-    throw 'NI';
-}
+
 
 export const strType = String.raw `\/|\-`;
 
