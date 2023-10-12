@@ -1,6 +1,6 @@
 {
   "name": "be-invoking",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "keywords": [
     "web-components",
     "web-component",
@@ -10,7 +10,7 @@
   "description": "Invoke method on upstream peer element or the host.",
   "main": "be-invoking.js",
   "module": "be-invoking.js",
-  "exports":{
+  "exports": {
     ".": "./be-invoking.js",
     "./be-invoking.js": "./be-invoking.js"
   },
