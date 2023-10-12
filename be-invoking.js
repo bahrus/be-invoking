@@ -33,7 +33,10 @@ export class BeInvoking extends BE {
             const { localEvent } = rule;
             let signalInfo;
             if (localEvent) {
-                throw 'NI';
+                signalInfo = {
+                    eventTarget: enhancedElement,
+                    type: localEvent,
+                };
             }
             else {
                 signalInfo = getDefaultSignalInfo(enhancedElement);

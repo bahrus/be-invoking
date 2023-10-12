@@ -39,7 +39,10 @@ export class BeInvoking extends BE<AP, Actions> implements Actions{
             const {localEvent} = rule;
             let signalInfo: SignalInfo | undefined;
             if(localEvent){
-                throw 'NI';
+                signalInfo = {
+                    eventTarget: enhancedElement,
+                    type: localEvent,
+                }
             }else{
                 signalInfo = getDefaultSignalInfo(enhancedElement);
             }

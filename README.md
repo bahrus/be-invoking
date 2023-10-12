@@ -1,4 +1,4 @@
-# be-invoking
+# be-invoking [TODO]
 
 Invoke method on upstream peer element or the host.
 
@@ -11,20 +11,20 @@ Invoke method on upstream peer element or the host.
 </my-custom-element>
 ```
 
-What this does:  Invokes host-element's doSomething method only when the input element dispatches "change" event.
+What this does:  Invokes host-element's doSomething method only when the input element dispatches "input" event.
 
 To specify a different event:
 
-## Example 1b
+## Example 1b [TODO]
 
 ```html
 <host-element>
     #shadow
-        <input be-invoking='of do something on input.'>
+        <input be-invoking='of do something on change.'>
 </host-element>
 ```
 
-## Example 2
+## Example 2 [TODO]
 
 ```html
 <host-element>

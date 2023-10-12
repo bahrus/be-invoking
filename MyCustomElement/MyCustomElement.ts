@@ -21,7 +21,10 @@ export class MyCustomElement extends HTMLElement{
         this.shadowRoot!.innerHTML = String.raw `
         <div itemscope>
             <div  id=someNumPropVal></div>
-            <input disabled be-invoking='of double it.'>
+            <!-- <h3>Example 1a</h3>
+            <input disabled be-invoking='of double it.'> -->
+            <h3>Example 1b</h3>
+            <input be-invoking='of double it on change.'>
         </div>
         <be-hive></be-hive>
         `;

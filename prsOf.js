@@ -2,12 +2,18 @@ import { tryParse } from 'be-enhanced/cpu.js';
 import { strType } from './be-invoking.js';
 const reOfInvokingStatement = [
     {
-        regExp: new RegExp(String.raw `^(?<remoteType>${strType})(?<remoteMethodName>[\w]+)(?<!\\)Of(?<localEvent>[\w]+)`),
+        regExp: new RegExp(String.raw `^(?<remoteType>${strType})(?<remoteMethodName>[\w]+)(?<!\\)On(?<localEvent>[\w]+)`),
         defaultVals: {}
     },
     {
         regExp: new RegExp(String.raw `^(?<remoteType>${strType})(?<remoteMethodName>[\w]+)`),
         defaultVals: {}
+    },
+    {
+        regExp: new RegExp(String.raw `^(?<remoteMethodName>[\w]+)(?<!\\)On(?<localEvent>[\w]+)`),
+        defaultVals: {
+            remoteType: '/',
+        }
     },
     {
         regExp: new RegExp(String.raw `^(?<remoteMethodName>[\w]+)`),
