@@ -1,3 +1,4 @@
+import '../MyPeerElement/MyPeerElement.js';
 export class MyCustomElement extends HTMLElement{
     #someNumProp: number = 23;
     get someNumProp(){
@@ -25,6 +26,9 @@ export class MyCustomElement extends HTMLElement{
             <input disabled be-invoking='of double it.'>
             <h3>Example 1b</h3>
             <input be-invoking='of double it on change.'>
+            <h3>Example 2</h3>
+            <peer-element -negate-it></peer-element>
+            <input be-invoking='of -negate-it'> 
         </div>
         <be-hive></be-hive>
         `;

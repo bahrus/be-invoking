@@ -56,7 +56,9 @@ export class BeInvoking extends BE<AP, Actions> implements Actions{
                     ref = await getRemoteEl(enhancedElement, remoteType as ElTypes, remoteMethodName);
                     rule.remoteRef = new WeakRef(ref);
                 }
-                (<any>ref)[remoteMethodName](ref, e);
+                const {lispToCamel} = await import('trans-render/lib/lispToCamel.js');
+                const newRemoteMethodName = lispToCamel(remoteMethodName);
+                (<any>ref)[newRemoteMethodName](ref, e);
             });
         }
         nudge(enhancedElement);

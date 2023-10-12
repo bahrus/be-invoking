@@ -1,4 +1,4 @@
-# be-invoking [TODO]
+# be-invoking
 
 Invoke method on upstream peer element or the host.
 
@@ -24,7 +24,7 @@ To specify a different event:
 </host-element>
 ```
 
-## Example 2 [TODO]
+## Example 2
 
 ```html
 <host-element>
