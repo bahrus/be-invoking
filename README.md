@@ -15,7 +15,7 @@ What this does:  Invokes host-element's doSomething method only when the input e
 
 To specify a different event:
 
-## Example 1b [TODO]
+## Example 1b
 
 ```html
 <host-element>
