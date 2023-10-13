@@ -6,17 +6,21 @@ import {strType} from './be-invoking.js';
 
 const remoteMethodName = String.raw `(?<remoteMethodName>[\w\-]+)`;
 
+const localEvent = String.raw `(?<!\\)On(?<localEvent>[\w]+)`;
+
+const remoteType = String.raw `(?<remoteType>${strType})`;
+
 const reOfInvokingStatement: Array<RegExpOrRegExpExt<Partial<InvokeRule>>> = [
     {
-        regExp: new RegExp(String.raw `^(?<remoteType>${strType})${remoteMethodName}(?<!\\)On(?<localEvent>[\w]+)`),
+        regExp: new RegExp(String.raw `^${remoteType}${remoteMethodName}${localEvent}`),
         defaultVals:{}
     },
     {
-        regExp: new RegExp(String.raw `^(?<remoteType>${strType})${remoteMethodName}`),
+        regExp: new RegExp(String.raw `^${remoteType}${remoteMethodName}`),
         defaultVals:{}
     },
     {
-        regExp: new RegExp(String.raw `^${remoteMethodName}(?<!\\)On(?<localEvent>[\w]+)`),
+        regExp: new RegExp(String.raw `^${remoteMethodName}${localEvent}`),
         defaultVals:{
             remoteType: '/',
         }

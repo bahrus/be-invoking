@@ -48,6 +48,7 @@ export class BeInvoking extends BE<AP, Actions> implements Actions{
                 signalInfo = getDefaultSignalInfo(enhancedElement);
             }
             const {eventTarget, type} = signalInfo;
+            //TODO  abort controller
             eventTarget.addEventListener(type, async e => {
                 let {remoteRef, remoteMethodName} = rule;
                 let ref = remoteRef?.deref();
