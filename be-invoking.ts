@@ -22,7 +22,7 @@ export class BeInvoking extends BE<AP, Actions> implements Actions{
         } as BEConfig;
     }
 
-    async onCamelized(self: this): ProPAP {
+    async onCamelized(self: this) {
         const {of, Of} = self;
         let invokingRules: Array<InvokeRule> = [];
         if((of || Of) !== undefined){
