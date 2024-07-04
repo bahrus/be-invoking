@@ -9,6 +9,8 @@ Invoke method on upstream peer element or the host.
 
 ## Example 1a
 
+https://open-ui.org/components/invokers.explainer/
+
 ```html
 <my-custom-element>
     #shadow
