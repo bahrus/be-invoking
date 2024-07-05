@@ -1,4 +1,4 @@
-# be-invoking
+# be-invoking (🎮)
 
 Invoke method on upstream peer element or the host.
 
@@ -16,7 +16,7 @@ Invoke method on upstream peer element or the host.
 ```html
 <mood-stone>
     #shadow
-        <input disabled be-invoking='of howAmIFeelingAboutToday.'>
+        <input disabled be-invoking='howAmIFeelingAboutToday'>
 </mood-stone>
 ```
 
@@ -32,7 +32,7 @@ To specify a different event to act on:
 ```html
 <mood-stone>
     #shadow
-        <input be-invoking='of howAmIFeelingAboutToday on change.'>
+        <input 🎮='howAmIFeelingAboutToday on change'>
 </mood-stone>
 ```
 
@@ -41,8 +41,8 @@ To specify a different event to act on:
 ```html
 <mood-stone>
     #shadow
-        <soul-searcher -my-method></soul-searcher>
-        <input be-invoking='of -my-method.'>
+        <soul-searcher -engage-in-second-guessing></soul-searcher>
+        <input 🎮='-engage-in-second-guessing'>
 </mood-stone>
 ```
 
