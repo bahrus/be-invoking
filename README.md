@@ -25,7 +25,7 @@ What this does:  Invokes host-element's howAmIFeelingToday method only when the 
 1.  The instance of whatever element is being invoked, just in case that is helpful.
 2.  The event that triggered the action. 
 
-To specify a different event:
+To specify a different event to act on:
 
 ## Example 1b
 
