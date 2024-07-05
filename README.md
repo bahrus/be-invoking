@@ -9,26 +9,29 @@ Invoke method on upstream peer element or the host.
 
 ## Example 1a
 
-https://open-ui.org/components/invokers.explainer/
+> [!NOTE]
+        console.log({nv});
+> This element enhancement took some inspiration from the original form that [this proposal adopted](https://open-ui.org/components/invokers.explainer/).  Once that becomes built into the platform (hopefully), definitely consider adopting that built-in technique before using this as a last resort.
+
 
 ```html
-<my-custom-element>
+<mood-stone>
     #shadow
-        <input disabled be-invoking='of do something.'>
-</my-custom-element>
+        <input disabled be-invoking='of howAmIFeelingAboutToday.'>
+</mood-stone>
 ```
 
-What this does:  Invokes host-element's doSomething method only when the input element dispatches "input" event.
+What this does:  Invokes host-element's howAmIFeelingToday method only when the input element dispatches "input" event.
 
 To specify a different event:
 
 ## Example 1b
 
 ```html
-<host-element>
+<mood-stone>
     #shadow
-        <input be-invoking='of do something on change.'>
-</host-element>
+        <input be-invoking='of howAmIFeelingAboutToday on change.'>
+</mood-stone>
 ```
 
 ## Example 2
