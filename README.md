@@ -10,8 +10,7 @@ Invoke method on upstream peer element or the host.
 ## Example 1a
 
 > [!NOTE]
-        console.log({nv});
-> This element enhancement took some inspiration from the original form that [this proposal adopted](https://open-ui.org/components/invokers.explainer/).  Once that becomes built into the platform (hopefully), definitely consider adopting that built-in technique before using this as a last resort.
+> This element enhancement took some inspiration from the original form that [the invoker commands proposal adopted](https://open-ui.org/components/invokers.explainer/).  Once that becomes built into the platform (hopefully), definitely consider adopting that built-in technique before using this as a last resort.
 
 
 ```html
@@ -21,7 +20,10 @@ Invoke method on upstream peer element or the host.
 </mood-stone>
 ```
 
-What this does:  Invokes host-element's howAmIFeelingToday method only when the input element dispatches "input" event.
+What this does:  Invokes host-element's howAmIFeelingToday method only when the input element dispatches "input" event.  It passes in two arguments:  
+
+1.  The instance of whatever element is being invoked, just in case that is helpful.
+2.  The event that triggered the action. 
 
 To specify a different event:
 
@@ -34,14 +36,14 @@ To specify a different event:
 </mood-stone>
 ```
 
-## Example 2
+## Example 2a
 
 ```html
-<host-element>
+<mood-stone>
     #shadow
-        <peer-element -my-method></peer-element>
+        <soul-searcher -my-method></soul-searcher>
         <input be-invoking='of -my-method.'>
-</host-element>
+</mood-stone>
 ```
 
 ## Viewing Demos Locally
