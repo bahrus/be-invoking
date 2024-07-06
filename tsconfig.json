@@ -9,7 +9,7 @@
 	},
 	"files": [
 		"behivior.ts",
-		"MoodStone/mood-stone.ts"
+		"MoodStone/MoodStone.ts"
 	],
 	"exclude":[
 		"node_modules"
