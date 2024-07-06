@@ -2,15 +2,15 @@
 
 Invoke method on upstream peer element or the host.
 
+> [!NOTE]
+> This element enhancement took some inspiration from the original form that [the invoker commands proposal adopted](https://open-ui.org/components/invokers.explainer/).  Once that becomes built into the platform (hopefully), definitely consider adopting that built-in technique before using this as a last resort.
+
 [![NPM version](https://badge.fury.io/js/be-invoking.png)](http://badge.fury.io/js/be-invoking)
 [![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/be-invoking?style=for-the-badge)](https://bundlephobia.com/result?p=be-invoking)
 <img src="http://img.badgesize.io/https://cdn.jsdelivr.net/npm/be-invoking?compression=gzip">
 [![Playwright Tests](https://github.com/bahrus/be-invoking/actions/workflows/CI.yml/badge.svg?branch=baseline)](https://github.com/bahrus/be-invoking/actions/workflows/CI.yml)
 
-## Example 1a
-
-> [!NOTE]
-> This element enhancement took some inspiration from the original form that [the invoker commands proposal adopted](https://open-ui.org/components/invokers.explainer/).  Once that becomes built into the platform (hopefully), definitely consider adopting that built-in technique before using this as a last resort.
+## Example 1a Invoking a host method on most common event (depending on context) [TODO]
 
 
 ```html
@@ -20,14 +20,18 @@ Invoke method on upstream peer element or the host.
 </mood-stone>
 ```
 
-What this does:  Invokes host-element's howAmIFeelingToday method only when the input element dispatches "input" event.  It passes in two arguments:  
+What this does:  Invokes host-element's howAmIFeelingToday method only when the input element dispatches "input" event.  If adorning a button element, it will invoke the method on clicking.    It passes in two arguments:  
 
 1.  The instance of whatever element is being invoked, just in case that is helpful.
 2.  The event that triggered the action. 
 
+Note that the word "be-invoking" is a bit long.  It is easy to choose your own name, as demonstrated by [TODO].
+
+In the rest of the examples, we will use the emoji 🎮 to represent "be-invoking" just for the fun of it.
+
 To specify a different event to act on:
 
-## Example 1b
+## Example 1b [TODO]
 
 ```html
 <mood-stone>
@@ -36,13 +40,23 @@ To specify a different event to act on:
 </mood-stone>
 ```
 
-## Example 2a
+## Example 1c [TODO]
 
 ```html
 <mood-stone>
     #shadow
         <soul-searcher -engage-in-second-guessing></soul-searcher>
         <input 🎮='-engage-in-second-guessing'>
+</mood-stone>
+```
+
+## Example 1d [TODO]
+
+```html
+<mood-stone>
+    #shadow
+        <soul-searcher></soul-searcher>
+        <input 🎮='~soulSearcher:engageInSecondGuessing'>
 </mood-stone>
 ```
 

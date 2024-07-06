@@ -8,8 +8,8 @@
 		"strict": true,
 	},
 	"files": [
-		"be-invoking.ts",
-		"MyCustomElement/MyCustomElement.ts"
+		"behivior.ts",
+		"MoodStone/mood-stone.ts"
 	],
 	"exclude":[
 		"node_modules"
