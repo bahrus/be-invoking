@@ -25,12 +25,12 @@ class BeInvoking extends BE {
                 const { getLocalSignal } = await import('be-linked/defaults.js');
                 const ls = await getLocalSignal(enhancedElement);
                 localEventType = ls.type;
-                const ac = new AbortController();
-                this.#abortControllers.push(ac);
-                enhancedElement.addEventListener(localEventType, e => {
-                    this.#invokeRemoteMethods(parsedStatement, enhancedElement, e);
-                }, { signal: ac.signal });
             }
+            const ac = new AbortController();
+            this.#abortControllers.push(ac);
+            enhancedElement.addEventListener(localEventType, e => {
+                this.#invokeRemoteMethods(parsedStatement, enhancedElement, e);
+            }, { signal: ac.signal });
         }
         nudge(enhancedElement);
         return {

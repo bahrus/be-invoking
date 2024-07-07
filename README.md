@@ -31,18 +31,18 @@ It passes in two arguments:
 1.  The instance of whatever element is being invoked, just in case that is helpful.
 2.  The event that triggered the action. 
 
-Note that the word "be-invoking" is a bit long.  It is easy to choose your own name, as demonstrated by [TODO].
+Note that the word "be-invoking" is a bit long.  It is easy to choose your own name, as demonstrated by [this file](https://github.com/bahrus/be-invoking/blob/baseline/%F0%9F%8E%AE.ts).
 
 In the rest of the examples, we will use the emoji 🎮 to represent "be-invoking" just for the fun of it.
 
 To specify a different event to act on:
 
-## Example 1b [TODO]
+## Example 1b
 
 ```html
 <mood-stone>
     #shadow
-        <input 🎮='howAmIFeelingAboutToday on change'>
+        <input disabled 🎮='howAmIFeelingAboutToday on change'>
 </mood-stone>
 ```
 

@@ -1,9 +1,10 @@
 import {BeHive, EMC, seed, MountObserver} from 'be-hive/be-hive.js';
 import {AP} from './types';
 
-const dependencyPart = String.raw `^(?<dependencyPart>.*)`; 
+const targetsPart = String.raw `^(?<targetsPart>.*)`;
+const targetsPartOnEventType = String.raw `${targetsPart} on (?<localEventType>.*)`
 
-const dssKeys = [['dependencyPart', 'remoteSpecifiers[]']] as [string, string][];
+const dssKeys = [['targetsPart', 'remoteSpecifiers[]']] as [string, string][];
 
 export const emc: EMC<any, AP> = {
     base: 'be-invoking',
@@ -14,7 +15,12 @@ export const emc: EMC<any, AP> = {
             regExpExts: {
                 parsedStatements: [
                     {
-                        regExp: dependencyPart,
+                        regExp: targetsPartOnEventType,
+                        defaultVals: {},
+                        dssKeys,
+                    },
+                    {
+                        regExp: targetsPart,
                         defaultVals: {},
                         dssKeys,
                     }
