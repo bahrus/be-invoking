@@ -3,7 +3,7 @@
 Invoke method on upstream peer element or the host.
 
 > [!NOTE]
-> This element enhancement took some inspiration from the original form that [the invoker commands proposal adopted](https://open-ui.org/components/invokers.explainer/).  Once that becomes built into the platform (hopefully), definitely consider adopting that built-in technique before using this as a last resort.
+> This element enhancement took some inspiration from the original form that [the invoker commands proposal adopted](https://open-ui.org/components/invokers.explainer/) as well as [countless frameworks](https://knockoutjs.com/documentation/click-binding.html).  Once that becomes built into the platform (hopefully), definitely consider adopting that built-in technique before using this as a last resort.
 
 [![NPM version](https://badge.fury.io/js/be-invoking.png)](http://badge.fury.io/js/be-invoking)
 [![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/be-invoking?style=for-the-badge)](https://bundlephobia.com/result?p=be-invoking)
@@ -20,7 +20,13 @@ Invoke method on upstream peer element or the host.
 </mood-stone>
 ```
 
-What this does:  Invokes host-element's howAmIFeelingToday method only when the input element dispatches "input" event.  If adorning a button element, it will invoke the method on clicking.    It passes in two arguments:  
+What this does:
+
+1.  Removes the disabled attribute after hydrating.
+2.  Listens by default for "input" events.
+3.  Invokes host-element's howAmIFeelingToday method only when the input element dispatches "input" event.  If adorning a button element, it will invoke the method on clicking.    
+
+It passes in two arguments:  
 
 1.  The instance of whatever element is being invoked, just in case that is helpful.
 2.  The event that triggered the action. 
