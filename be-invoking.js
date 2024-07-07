@@ -16,6 +16,7 @@ class BeInvoking extends BE {
         }
     };
     #abortControllers = [];
+    #cache = new Map();
     async hydrate(self) {
         const { parsedStatements, enhancedElement } = self;
         const { nudge } = await import('trans-render/lib/nudge.js');
@@ -41,7 +42,13 @@ class BeInvoking extends BE {
         const { remoteSpecifiers } = parsedStatement;
         const { find } = await import('trans-render/dss/find.js');
         for (const remoteSpecifier of remoteSpecifiers) {
-            const remoteTarget = await find(enhancedElement, remoteSpecifier);
+            let remoteTarget = this.#cache.get(remoteSpecifier)?.deref();
+            if (remoteTarget === undefined) {
+                const remoteTarget = await find(enhancedElement, remoteSpecifier);
+                if (!remoteTarget)
+                    throw 404;
+                this.#cache.set(remoteSpecifier, new WeakRef(remoteTarget));
+            }
             const { prop } = remoteSpecifier;
             remoteTarget[prop](remoteTarget, event);
         }

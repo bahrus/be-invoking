@@ -56,7 +56,7 @@ To specify a different event to act on:
 </mood-stone>
 ```
 
-## Example 1d [TODO]
+## Example 1d
 
 ```html
 <mood-stone>
