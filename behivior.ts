@@ -28,3 +28,7 @@ export const emc: EMC<any, AP> = {
         return BeInvoking;
     }
 }
+
+const mose = seed(emc);
+
+MountObserver.synthesize(document, BeHive, mose);

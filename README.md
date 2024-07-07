@@ -10,7 +10,7 @@ Invoke method on upstream peer element or the host.
 <img src="http://img.badgesize.io/https://cdn.jsdelivr.net/npm/be-invoking?compression=gzip">
 [![Playwright Tests](https://github.com/bahrus/be-invoking/actions/workflows/CI.yml/badge.svg?branch=baseline)](https://github.com/bahrus/be-invoking/actions/workflows/CI.yml)
 
-## Example 1a Invoking a host method on most common event (depending on context) [TODO]
+## Example 1a Invoking a host method on most common event (depending on context)
 
 
 ```html

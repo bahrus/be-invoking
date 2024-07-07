@@ -1,3 +1,4 @@
+import { BeHive, seed, MountObserver } from 'be-hive/be-hive.js';
 const dependencyPart = String.raw `^(?<dependencyPart>.*)`;
 const dssKeys = [['dependencyPart', 'remoteSpecifiers[]']];
 export const emc = {
@@ -23,3 +24,5 @@ export const emc = {
         return BeInvoking;
     }
 };
+const mose = seed(emc);
+MountObserver.synthesize(document, BeHive, mose);

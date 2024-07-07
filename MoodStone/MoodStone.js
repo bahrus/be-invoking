@@ -1,6 +1,19 @@
 export class MoodStone extends HTMLElement {
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+    }
     howAmIFeelingAboutToday(self, e) {
         console.log({ self, e });
+    }
+    connectedCallback() {
+        this.shadowRoot.innerHTML = String.raw `
+        <div>
+            <h3>Example 1</h3>
+            <input disabled be-invoking='howAmIFeelingAboutToday.'>
+        </div>
+        <be-hive></be-hive>
+        `;
     }
 }
 customElements.define('mood-stone', MoodStone);
