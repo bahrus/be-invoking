@@ -1,3 +1,4 @@
+import '../SoulSearcher/SoulSearcher.js';
 export class MoodStone extends HTMLElement {
     constructor() {
         super();
@@ -13,6 +14,9 @@ export class MoodStone extends HTMLElement {
             <input disabled be-invoking='howAmIFeelingAboutToday'>
             <h3>Example 1b</h3>
             <input disabled 🕹️='howAmIFeelingAboutToday on change'>
+            <h3>Example 1c</h3>
+            <soul-searcher -engage-in-second-guessing></soul-searcher>
+            <input disabled 🕹️='-engage-in-second-guessing'>
         </div>
         <be-hive></be-hive>
         `;

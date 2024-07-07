@@ -46,13 +46,13 @@ To specify a different event to act on:
 </mood-stone>
 ```
 
-## Example 1c [TODO]
+## Example 1c
 
 ```html
 <mood-stone>
     #shadow
         <soul-searcher -engage-in-second-guessing></soul-searcher>
-        <input 🕹️='-engage-in-second-guessing'>
+        <input disabled 🕹️='-engage-in-second-guessing'>
 </mood-stone>
 ```
 
