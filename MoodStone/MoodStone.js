@@ -9,14 +9,16 @@ export class MoodStone extends HTMLElement {
     }
     connectedCallback() {
         this.shadowRoot.innerHTML = String.raw `
+        <soul-searcher -engage-in-second-guessing></soul-searcher>
         <div>
             <h3>Example 1a</h3>
-            <input disabled be-invoking='howAmIFeelingAboutToday'>
+            <input disabled be-invoking=howAmIFeelingAboutToday>
             <h3>Example 1b</h3>
             <input disabled 🕹️='howAmIFeelingAboutToday on change'>
             <h3>Example 1c</h3>
-            <soul-searcher -engage-in-second-guessing></soul-searcher>
-            <input disabled 🕹️='-engage-in-second-guessing'>
+            <input disabled 🕹️=-engage-in-second-guessing>
+            <h3>Example 1d</h3>
+            <input disabled 🕹️=~soulSearcher:engageInSecondGuessing>
         </div>
         <be-hive></be-hive>
         `;
