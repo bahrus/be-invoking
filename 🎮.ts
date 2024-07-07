@@ -3,8 +3,8 @@ import { emc as baseEMC} from './behivior.js';
 
 export const emc: EMC = {
     ...baseEMC,
-    base: '🎮',
-    enhPropKey: '🎮',
+    base: '🕹️',
+    enhPropKey: '🕹️',
     
 };
 

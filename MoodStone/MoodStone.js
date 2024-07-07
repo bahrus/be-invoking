@@ -12,7 +12,7 @@ export class MoodStone extends HTMLElement {
             <h3>Example 1a</h3>
             <input disabled be-invoking='howAmIFeelingAboutToday'>
             <h3>Example 1b</h3>
-            <input disabled 🎮='howAmIFeelingAboutToday on change'>
+            <input disabled 🕹️='howAmIFeelingAboutToday on change'>
         </div>
         <be-hive></be-hive>
         `;
