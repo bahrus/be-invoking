@@ -28,7 +28,7 @@ class BeInvoking extends BE {
                 const ac = new AbortController();
                 this.#abortControllers.push(ac);
                 enhancedElement.addEventListener(localEventType, e => {
-                    this.#invokeRemoteMethods(parsedStatement, enhancedElement);
+                    this.#invokeRemoteMethods(parsedStatement, enhancedElement, e);
                 }, { signal: ac.signal });
             }
         }
@@ -37,11 +37,13 @@ class BeInvoking extends BE {
             resolved: true
         };
     }
-    async #invokeRemoteMethods(parsedStatement, enhancedElement) {
+    async #invokeRemoteMethods(parsedStatement, enhancedElement, event) {
         const { remoteSpecifiers } = parsedStatement;
         const { find } = await import('trans-render/dss/find.js');
         for (const remoteSpecifier of remoteSpecifiers) {
             const remoteTarget = await find(enhancedElement, remoteSpecifier);
+            const { prop } = remoteSpecifier;
+            remoteTarget[prop](remoteTarget, event);
         }
     }
 }
