@@ -50,9 +50,9 @@ class BeInvoking extends BE implements Actions {
         const {remoteSpecifiers} = parsedStatement;
         const {find} = await import('trans-render/dss/find.js');
         for(const remoteSpecifier of remoteSpecifiers){
-            let remoteTarget = this.#cache.get(remoteSpecifier)?.deref();
+            let remoteTarget = this.#cache.get(remoteSpecifier)?.deref() as Element | undefined | null;
             if(remoteTarget === undefined){
-                const remoteTarget = await find(enhancedElement, remoteSpecifier);
+                remoteTarget = await find(enhancedElement, remoteSpecifier);
                 if(!remoteTarget) throw 404;
                 this.#cache.set(remoteSpecifier, new WeakRef(remoteTarget));
             }

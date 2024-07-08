@@ -44,7 +44,7 @@ class BeInvoking extends BE {
         for (const remoteSpecifier of remoteSpecifiers) {
             let remoteTarget = this.#cache.get(remoteSpecifier)?.deref();
             if (remoteTarget === undefined) {
-                const remoteTarget = await find(enhancedElement, remoteSpecifier);
+                remoteTarget = await find(enhancedElement, remoteSpecifier);
                 if (!remoteTarget)
                     throw 404;
                 this.#cache.set(remoteSpecifier, new WeakRef(remoteTarget));

@@ -5,7 +5,13 @@ export class MoodStone extends HTMLElement {
         this.attachShadow({mode: 'open'});
     }
 
+    #invokeCount = 0;
+    get invokeCount(){
+        return this.#invokeCount;
+    }
+
     howAmIFeelingAboutToday(self: this, e: Event){
+        this.#invokeCount++;
         console.log({self, e});
     }
 
