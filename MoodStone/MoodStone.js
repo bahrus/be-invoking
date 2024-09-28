@@ -1,3 +1,5 @@
+// @ts-check
+
 import '../SoulSearcher/SoulSearcher.js';
 export class MoodStone extends HTMLElement {
     constructor() {

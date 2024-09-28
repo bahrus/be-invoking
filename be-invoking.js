@@ -34,9 +34,8 @@ class BeInvoking extends BE {
         for (const parsedStatement of parsedStatements) {
             let { localEventType } = parsedStatement;
             if (localEventType === undefined) {
-                const { getLocalSignal } = await import('be-linked/defaults.js');
-                const ls = await getLocalSignal(enhancedElement);
-                localEventType = ls.type;
+                const { stdEvt } = await import('trans-render/asmr/stdEvt.js');
+                localEventType = stdEvt(enhancedElement);
             }
             const ac = new AbortController();
             this.#abortControllers.push(ac);

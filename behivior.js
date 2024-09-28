@@ -9,7 +9,7 @@ const targetsPartOnEventType = String.raw `${targetsPart} on (?<localEventType>.
 /**
  * @type {Array<[string, string]>}
  */
-const dssKeys = [['targetsPart', 'remoteSpecifiers']];
+const dssArrayKeys = [['targetsPart', 'remoteSpecifiers']];
 
 /**
  * @type {Partial<EMC<any, AP>>}
@@ -25,12 +25,12 @@ export const emc = {
                     {
                         regExp: targetsPartOnEventType,
                         defaultVals: {},
-                        dssKeys,
+                        dssArrayKeys,
                     },
                     {
                         regExp: targetsPart,
                         defaultVals: {},
-                        dssKeys,
+                        dssArrayKeys,
                     }
                 ]
             }
