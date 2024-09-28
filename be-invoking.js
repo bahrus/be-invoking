@@ -1,11 +1,19 @@
-import { config as beCnfg } from 'be-enhanced/config.js';
+// @ts-check
 import { BE } from 'be-enhanced/BE.js';
+import { propInfo, resolved, rejected } from 'be-enhanced/cc.js';
 import { dispatchEvent as de } from 'trans-render/positractions/dispatchEvent.js';
+
+/** @import {BEConfig, IEnhancement, BEAllProps} from './ts-refs/be-enhanced/types.d.ts' */
+/** @import {Actions, PAP, AP, BAP, ObservingParameters} from './ts-refs/be-invoking/types' */
+
 class BeInvoking extends BE {
     de = de;
+    /**
+     * @type {BEConfig<BAP, Actions & IEnhancement, any>}
+     */
     static config = {
         propInfo: {
-            ...beCnfg.propInfo,
+            ...propInfo,
             parsedStatements: {},
             rawStatements: {},
         },
@@ -13,7 +21,10 @@ class BeInvoking extends BE {
             hydrate: {
                 ifAllOf: ['parsedStatements']
             }
-        }
+        },
+        positractions: [
+            resolved, rejected
+        ]
     };
     #abortControllers = [];
     #cache = new Map();

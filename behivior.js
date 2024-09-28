@@ -1,7 +1,19 @@
+// @ts-check
 import { BeHive, seed, MountObserver } from 'be-hive/be-hive.js';
+/** @import {EMC, EventListenerOrFn} from './ts-refs/trans-render/be/types.d.ts' */
+/** @import {Actions, PAP,  AP} from './ts-refs/be-invoking/types' */;
+
 const targetsPart = String.raw `^(?<targetsPart>.*)`;
 const targetsPartOnEventType = String.raw `${targetsPart} on (?<localEventType>.*)`;
-const dssKeys = [['targetsPart', 'remoteSpecifiers[]']];
+
+/**
+ * @type {Array<[string, string]>}
+ */
+const dssKeys = [['targetsPart', 'remoteSpecifiers']];
+
+/**
+ * @type {Partial<EMC<any, AP>>}
+ */
 export const emc = {
     base: 'be-invoking',
     map: {
