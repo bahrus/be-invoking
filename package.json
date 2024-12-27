@@ -22,13 +22,13 @@
     "update": "ncu -u && npm install"
   },
   "dependencies": {
-    "be-enhanced": "0.0.144",
-    "be-hive": "0.0.221",
-    "trans-render": "0.0.845"
+    "be-enhanced": "0.0.163",
+    "be-hive": "0.0.243",
+    "trans-render": "0.0.876"
   },
   "devDependencies": {
-    "may-it-serve": "0.0.8",
-    "@playwright/test": "1.47.2"
+    "may-it-serve": "0.0.9",
+    "@playwright/test": "1.49.1"
   },
   "repository": {
     "type": "git",
