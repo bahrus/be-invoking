@@ -16,9 +16,9 @@
   },
   "types": "types.d.ts",
   "scripts": {
-    "serve": "node node_modules/may-it-serve",
+    "serve": "python3 ./node_modules/ssi-server/ssi_server.py",
     "test": "playwright test",
-    "safari": "npx playwright wk http://localhost:3030",
+    "safari": "npx playwright wk http://localhost:8000",
     "update": "ncu -u && npm install"
   },
   "dependencies": {
@@ -27,8 +27,9 @@
     "trans-render": "0.0.876"
   },
   "devDependencies": {
-    "may-it-serve": "0.0.9",
-    "@playwright/test": "1.49.1"
+    "ssi-server": "0.0.1",
+    "@playwright/test": "1.49.1",
+    "xtal-element": "0.0.625"
   },
   "repository": {
     "type": "git",
