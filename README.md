@@ -16,7 +16,7 @@ Invoke method on upstream peer element or the host.
 ```html
 <mood-stone>
     #shadow
-        <input disabled be-invoking='howAmIFeelingAboutToday'>
+        <button disabled be-invoking='howAmIFeelingAboutToday'>Feeling great</button>
 </mood-stone>
 ```
 
