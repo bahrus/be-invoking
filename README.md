@@ -14,9 +14,20 @@ Invoke method on upstream peer element or the host.
 
 
 ```html
-<mood-stone>
-    #shadow
-        <button disabled be-invoking='howAmIFeelingAboutToday'>Feeling great</button>
+<script type=module>
+    import {Mount} from 'xtal-element/index.js';
+    import '/🕹️.js';
+    class MoodStoneBase extends Mount{
+        howAmIFeelingAboutToday(targetElement, event){
+            console.log({targetElement, event});
+        }
+    }
+    customElements.define('mood-stone-base', MoodStoneBase);
+</script>
+...
+<mood-stone itemscope>
+    <button 🕹️=howAmIFeelingAboutToday>Feeling great</button>
+    <xtal-element inherits=mood-stone-base></xtal-element>
 </mood-stone>
 ```
 
