@@ -58,20 +58,18 @@ To specify a different event to act on:
 ## Example 1c [TODO]
 
 ```html
-<mood-stone>
-    #shadow
+<mood-stone itemscope>
         <soul-searcher -engage-in-second-guessing></soul-searcher>
-        <input disabled 🕹️='-engage-in-second-guessing'>
+        <button disabled 🕹️='-engage-in-second-guessing'>What have I done?</button>
 </mood-stone>
 ```
 
-## Example 1d
+## Example 1d [TODO]
 
 ```html
-<mood-stone>
-    #shadow
-        <soul-searcher></soul-searcher>
-        <input 🕹️='~soulSearcher:engageInSecondGuessing'>
+<mood-stone itemscope>
+    <soul-searcher></soul-searcher>
+    <button 🕹️='~soulSearcher:engageInSecondGuessing'>What have I done?</button>
 </mood-stone>
 ```
 
