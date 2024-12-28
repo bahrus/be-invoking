@@ -9,7 +9,7 @@
         import {Mount} from 'xtal-element/index.js';
         import '/🕹️.js';
         class SoulSearchingBase extends Mount{
-            howAmIFeelingAboutToday(targetElement, event){
+            engageInSoulSearching(targetElement, event){
                 console.log({targetElement, event});
             }
         }
@@ -18,12 +18,12 @@
 </head>
 <body>
     <mood-stone itemscope>
-        <soul-searching itemscope -how-am-i-feeling-about-today>
+        <soul-searching itemscope -engage-in-soul-searching>
             <xtal-element
                 inherits=soul-searching-base
             ></xtal-element>
         </soul-searching>
-        <button 🕹️=-how-am-i-feeling-about-today>Feeling great</button>
+        <button 🕹️=-engage-in-soul-searching>What have I done?</button>
         <xtal-element></xtal-element>
     </mood-stone>
 </body>
