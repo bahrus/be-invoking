@@ -11,7 +11,7 @@
         import {hookUp} from 'trans-render/lib/hookUp.js';
         const test = hookUp(`
 ({
-        howAmIFeelingAboutToday: ({targetElement, event}) => {
+        howAmIFeelingAboutToday: (targetElement, event) => {
             console.log({targetElement, event});
         }
 })
