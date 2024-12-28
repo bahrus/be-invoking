@@ -44,9 +44,9 @@ It passes in two arguments:
 
 Note that the name of this package, "be-invoking" is the canonical name of this element ehancement.  It is a bit long, but benefits from making the markup somewhat self-explanatory.  It is easy to choose your own name, as demonstrated by [this file](https://github.com/bahrus/be-invoking/blob/baseline/%F0%9F%95%B9%EF%B8%8F.ts).
 
-To specify a different event to act on:
+## Example 1b  Specifying the event
 
-## Example 1b
+To specify a different event to act on:
 
 ```html
 <mood-stone itemscope>
@@ -55,7 +55,7 @@ To specify a different event to act on:
 </mood-stone>
 ```
 
-## Example 1c
+## Example 1c Specifying a peer element
 
 ```html
 <script type=module>
@@ -81,12 +81,19 @@ To specify a different event to act on:
 </mood-stone>
 ```
 
-## Example 1d [TODO]
+## Example 1d Specifying a Peer Element, Part II
+
+This also works:
 
 ```html
 <mood-stone itemscope>
-    <soul-searcher></soul-searcher>
-    <button 🕹️='~soulSearcher:engageInSecondGuessing'>What have I done?</button>
+    <soul-searching itemscope>
+        <xtal-element
+            inherits=soul-searching-base
+        ></xtal-element>
+    </soul-searching>
+    <button 🕹️=~soulSearching?.engageInSoulSearching>What have I done?</button>
+    <xtal-element></xtal-element>
 </mood-stone>
 ```
 
