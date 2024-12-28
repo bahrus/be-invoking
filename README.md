@@ -49,13 +49,13 @@ To specify a different event to act on:
 ## Example 1b
 
 ```html
-<mood-stone>
-    #shadow
-        <input disabled 🕹️='howAmIFeelingAboutToday on change'>
+<mood-stone itemscope>
+    <button 🕹️="howAmIFeelingAboutToday on mouseover">Feeling great</button>
+    <xtal-element inherits=mood-stone-base></xtal-element>
 </mood-stone>
 ```
 
-## Example 1c
+## Example 1c [TODO]
 
 ```html
 <mood-stone>
