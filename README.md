@@ -42,7 +42,7 @@ It passes in two arguments:
 1.  The instance of whatever element is being invoked, just in case that is helpful.
 2.  The event that triggered the action. 
 
-Note that the name of this package, "be-invoking" is the canonical name of this element ehancement.  It is a bit long, but benefits from making the markup somewhat self-explanatory.  It is easy to choose your own name, as demonstrated by [this file](https://github.com/bahrus/be-invoking/blob/baseline/%F0%9F%95%B9%EF%B8%8F.ts).
+Note that the name of this package, "be-invoking" is the canonical name of this element enhancement.  It is a bit long, but benefits from making the markup somewhat self-explanatory.  It is easy to choose your own name, as demonstrated by [this file](https://github.com/bahrus/be-invoking/blob/baseline/%F0%9F%95%B9%EF%B8%8F.ts).
 
 ## Example 1b  Specifying the event
 
