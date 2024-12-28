@@ -58,9 +58,26 @@ To specify a different event to act on:
 ## Example 1c
 
 ```html
+<script type=module>
+    import {Mount} from 'xtal-element/index.js';
+    import '/🕹️.js';
+    class SoulSearchingBase extends Mount{
+        engageInSoulSearching(targetElement, event){
+            console.log({targetElement, event});
+        }
+    }
+    customElements.define('soul-searching-base', SoulSearchingBase);
+</script>
+...
+
 <mood-stone itemscope>
-        <soul-searcher -engage-in-second-guessing></soul-searcher>
-        <button disabled 🕹️='-engage-in-second-guessing'>What have I done?</button>
+    <soul-searching itemscope -engage-in-soul-searching>
+        <xtal-element
+            inherits=soul-searching-base
+        ></xtal-element>
+    </soul-searching>
+    <button 🕹️=-engage-in-soul-searching>What have I done?</button>
+    <xtal-element></xtal-element>
 </mood-stone>
 ```
 

@@ -60,7 +60,15 @@ class BeInvoking extends BE {
                 this.#cache.set(remoteSpecifier, new WeakRef(remoteTarget));
             }
             const { prop } = remoteSpecifier;
-            remoteTarget[prop](remoteTarget, event);
+            if(prop !== undefined){
+                remoteTarget[prop](remoteTarget, event);
+            }else{
+                const {path} = remoteSpecifier;
+                //cut to the chase for now, but should support chained accessors, really
+                const reducedPath = path.replaceAll('?.', ".").substring(1);
+                remoteTarget[reducedPath](remoteTarget, event);
+            }
+            
         }
     }
 }
