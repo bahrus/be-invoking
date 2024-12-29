@@ -129,3 +129,21 @@ import 'be-invoking/be-invoking.js';
 </script>
 ```
 
+[or](https://generator.jspm.io)
+
+```html
+<script type="importmap">
+{
+"imports": {
+    "be-invoking": "https://ga.jspm.io/npm:be-invoking@0.0.5/be-invoking.js"
+},
+"scopes": {
+    "https://ga.jspm.io/": {
+    "be-enhanced/": "https://ga.jspm.io/npm:be-enhanced@0.0.163/",
+    "trans-render/": "https://ga.jspm.io/npm:trans-render@0.0.876/"
+    }
+}
+}
+</script>
+```
+
