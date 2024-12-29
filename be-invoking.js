@@ -6,6 +6,9 @@ import { dispatchEvent as de } from 'trans-render/positractions/dispatchEvent.js
 /** @import {BEConfig, IEnhancement, BEAllProps} from './ts-refs/be-enhanced/types.d.ts' */
 /** @import {Actions, PAP, AP, BAP, ObservingParameters} from './ts-refs/be-invoking/types' */
 
+/**
+ * @implements {Actions}
+ */
 class BeInvoking extends BE {
     de = de;
     /**

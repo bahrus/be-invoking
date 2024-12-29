@@ -24,12 +24,13 @@
   "dependencies": {
     "be-enhanced": "0.0.163",
     "be-hive": "0.0.243",
-    "trans-render": "0.0.876"
+    "trans-render": "0.0.877"
   },
   "devDependencies": {
     "ssi-server": "0.0.1",
     "@playwright/test": "1.49.1",
-    "xtal-element": "0.0.627"
+    "xtal-element": "0.0.627",
+    "be-methodical": "0.0.1"
   },
   "repository": {
     "type": "git",
