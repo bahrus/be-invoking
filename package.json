@@ -24,7 +24,8 @@
   "dependencies": {
     "be-enhanced": "0.0.185",
     "be-hive": "0.0.264",
-    "trans-render": "0.0.946"
+    "mount-observer": "0.0.98",
+    "trans-render": "0.0.948"
   },
   "devDependencies": {
     "ssi-server": "0.0.1",
