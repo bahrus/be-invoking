@@ -81,21 +81,7 @@ To specify a different event to act on:
 </mood-stone>
 ```
 
-## Example 1d Specifying a Peer Element, Part II
 
-This also works:
-
-```html
-<mood-stone itemscope>
-    <soul-searching itemscope>
-        <xtal-element
-            inherits=soul-searching-base
-        ></xtal-element>
-    </soul-searching>
-    <button 🕹️=~soulSearching?.engageInSoulSearching>What have I done?</button>
-    <xtal-element></xtal-element>
-</mood-stone>
-```
 
 ## Viewing Demos Locally
 
