@@ -26,7 +26,7 @@ Invoke method on upstream peer element or the host.
 </script>
 ...
 <mood-stone itemscope>
-    <button 🕹️=howAmIFeelingAboutToday>Feeling great</button>
+    <button disabled 🕹️=?.howAmIFeelingAboutToday>Feeling great</button>
     <xtal-element inherits=mood-stone-base></xtal-element>
 </mood-stone>
 ```
@@ -34,8 +34,8 @@ Invoke method on upstream peer element or the host.
 What this does:
 
 1.  Removes the disabled attribute after hydrating.
-2.  Listens by default for "input" events.
-3.  Invokes host-element's howAmIFeelingToday method only when the input element dispatches "input" event.  If adorning a button element, it will invoke the method on clicking.    
+2.  Listens by default for "click" events in this case.
+3.  Invokes host-element's howAmIFeelingToday method only when the button dispatches "click" event.
 
 It passes in two arguments:  
 
@@ -62,7 +62,7 @@ To specify a different event to act on:
     import {Mount} from 'xtal-element/index.js';
     import '/🕹️.js';
     class SoulSearchingBase extends Mount{
-        engageInSoulSearching(targetElement, event){
+        engage(targetElement, event){
             console.log({targetElement, event});
         }
     }
@@ -71,13 +71,13 @@ To specify a different event to act on:
 ...
 
 <mood-stone itemscope>
-    <soul-searching itemscope -engage-in-soul-searching>
+    <soul-searching #>
         <xtal-element
             inherits=soul-searching-base
         ></xtal-element>
     </soul-searching>
-    <button 🕹️=-engage-in-soul-searching>What have I done?</button>
-    <xtal-element></xtal-element>
+    <button 🕹️="#{{soul-searching}}?.engage">What have I done?</button>
+    <xtal-element -id></xtal-element>
 </mood-stone>
 ```
 
