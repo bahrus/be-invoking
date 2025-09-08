@@ -5,6 +5,12 @@ Invoke method on upstream peer element or the host.
 > [!NOTE]
 > This element enhancement took some inspiration from the original form that [the invoker commands proposal adopted](https://open-ui.org/components/invokers.explainer/) as well as [countless frameworks](https://knockoutjs.com/documentation/click-binding.html).  Once that becomes built into the platform (hopefully), definitely consider adopting that built-in technique before using this as a last resort.
 
+## Other alternatives
+
+This enhancement allows us to only specify the name of a method to invoke from the host or peer element, optionally based on some explicitly defined event.  After it invokes the method, this enhancement simply punts.  I.e. all the logic for actually doing anything must be fully defined within the method.
+
+Another enhancement, [be-modding](https://github.com/bahrus/be-modding), takes a more active role in managing what happens.
+
 [![NPM version](https://badge.fury.io/js/be-invoking.png)](http://badge.fury.io/js/be-invoking)
 [![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/be-invoking?style=for-the-badge)](https://bundlephobia.com/result?p=be-invoking)
 <img src="http://img.badgesize.io/https://cdn.jsdelivr.net/npm/be-invoking?compression=gzip">
