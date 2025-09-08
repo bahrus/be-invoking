@@ -32,7 +32,7 @@ Another enhancement, [be-modding](https://github.com/bahrus/be-modding), takes a
 </script>
 ...
 <mood-stone itemscope>
-    <button disabled 🕹️=?.howAmIFeelingAboutToday>Feeling great</button>
+    <button disabled 🕹️=howAmIFeelingAboutToday>Feeling great</button>
     <xtal-element inherits=mood-stone-base></xtal-element>
 </mood-stone>
 ```
