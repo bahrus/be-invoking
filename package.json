@@ -14,7 +14,7 @@
     ".": "./be-invoking.js",
     "./be-invoking.js": "./be-invoking.js"
   },
-  "types": "types.d.ts",
+  "types": "./ts-refs/be-invoking/types.d.ts",
   "scripts": {
     "serve": "python3 ./node_modules/ssi-server/ssi_server.py",
     "test": "playwright test",
